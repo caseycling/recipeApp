@@ -2,26 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload, bitch-ass!
+const App = () => {
 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const APP_ID = 'b2630a22';
+  const APP_KEY = 'bf41122161d5eef385038956b189eb18';	
+
+  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
+
+
+  return(
+    <div className="App">
+      <h1>Hello React</h1>
     </div>
   );
-}
+};
 
 export default App;
