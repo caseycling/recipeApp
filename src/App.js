@@ -47,6 +47,7 @@ const App = () => {
           title={recipe.recipe.label} 
           calories={Math.floor(recipe.recipe.calories)} 
           image={recipe.recipe.image}
+          ingredients={recipe.recipe.ingredients}
         />
       ))}
     </div>
