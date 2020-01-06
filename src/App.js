@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from './Recipe';
 import './App.css';
+import Image from './Recipe_logo.jpeg'
 
 const App = () => {
 
@@ -11,7 +12,9 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState('');
 
-
+  const hideLogo = () => {
+    document.getElementById('recipeImage').src='';
+  };
 
   useEffect(() => {
     getRecipes();
@@ -31,6 +34,7 @@ const App = () => {
 
   const getSearch = event => {
     event.preventDefault();
+    hideLogo();
     setQuery(search);
     setSearch('');
   }
@@ -38,10 +42,14 @@ const App = () => {
   return (
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
-        <input className="search-bar" type="text" placeholder="Enter an ingredient to search for related recipes" value={search} onChange={updateSearch} />
+        <input className="search-bar" type="text" 
+        placeholder="Enter an ingredient to search for related recipes" 
+        value={search} onChange={updateSearch} 
+        />
         <button className="search-button" type="submit">Search</button>
       </form>
       <div className="recipes">
+        <img src={Image} alt="" id="recipeImage"/>
         {recipes.map(recipe => (
           <Recipe
             key={recipe.recipe.label}
