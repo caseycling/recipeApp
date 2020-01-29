@@ -49,7 +49,7 @@ const App = () => {
         <button className="search-button" type="submit">Search</button>
       </form>
       <div className="recipes">
-        <img src={Image} alt="" id="recipeImage"/>
+        <img src={Image} alt="" id="recipeImage" style={{ mixBlendMode: "multiply" }}/>
         {recipes.map(recipe => (
           <Recipe
             key={recipe.recipe.label}
